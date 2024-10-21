@@ -45,6 +45,8 @@ const PropertyTools = () => {
 
         </li>
         </Link>
+
+        <Link to='/HomeWorth'>
         <li className="flex items-center p-4 bg-white rounded shadow hover:bg-gray-100 py-6">
           <img
             src="https://dist-property-frontend-daft.daft.ie/static/images/tabs-panels/home-value.svg"
@@ -60,6 +62,8 @@ const PropertyTools = () => {
                 <IoIosArrowForward className="mx-auto" />
 
         </li>
+        </Link>
+        <Link to='/ExpertHomeValution'>
         <li className="flex items-center p-4 bg-white rounded shadow hover:bg-gray-100 py-6">
           <img
             src="https://dist-property-frontend-daft.daft.ie/static/images/tabs-panels/get-free-agent-valuation.svg"
@@ -75,6 +79,7 @@ const PropertyTools = () => {
                 <IoIosArrowForward className="mx-auto" />
 
         </li>
+        </Link>
         <li className="flex items-center p-4 bg-white rounded shadow hover:bg-gray-100 py-6">
           <img
             src="https://dist-property-frontend-daft.daft.ie/static/images/tabs-panels/market-your-home.svg"

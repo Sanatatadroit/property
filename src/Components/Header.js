@@ -1,38 +1,75 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-function Header() {
+function Headers() {
+ 
+  const navigate = useNavigate();
+
+
+
+  const handleLogout = async () => {
+    try {
+      
+      await axios.get('http://127.0.0.1:2030/auth/logout', 
+        {
+          withCredentials:"true",
+        });
+      
+      
+      localStorage.removeItem('token'); 
+
+      
+      document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'; 
+
+      
+      navigate('/SignIn'); 
+    } catch (error) {
+      console.error('Logout failed', error);
+    }
+  };
+
   return (
     <header className="bg-white text-black py-4 px-[200px]">
       <nav className="container mx-auto flex justify-between items-center">
         {/* Left side links */}
         <ul className="flex space-x-6 text-bold">
-        <li>
+          <li>
             <Link to="/">
               <img 
-                src="./daft-logo.svg" 
+                src="./logo1.png" 
                 alt="daft.ie logo" 
-                className="h-7 mr-4" // Adjust the height or width as needed
+                className="h-14 mr-14 text-white"
               />
             </Link>
           </li>
-          <li><Link to="/" className="hover:underline">Buy</Link></li>
-          <li><Link to="/" className="hover:underline">Rent</Link></li>
-          <li><Link to="/" className="hover:underline">Share</Link></li>
-          <li><Link to="/" className="hover:underline">New Homes</Link></li>
-          <li><Link to="/" className="hover:underline">Sell</Link></li>
-          <li><Link to="/" className="hover:underline">Commercial</Link></li>
-          <li><Link to="/" className="hover:underline">Mortgages</Link></li>
+      
+            <Link to="/buy" className="hover:underline font-semibold">Buy</Link>
+            
+          
+        
+            <Link to="/Sale" className="hover:underline font-semibold">Sale</Link>
+          
+          
+         
         </ul>
 
         {/* Right side links */}
         <ul className="flex space-x-6">
-          <li><Link to="/" className="hover:underline">Place Ad</Link></li>
-          <li><Link to="/signin" className="hover:underline">Sign In</Link></li>
+        
+          <li><Link to="/SignIn" className="hover:underline font-semibold"  >Sign In</Link></li>
+          <li>
+            <button 
+              className="hover:underline font-semibold" 
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+          </li>
         </ul>
       </nav>
     </header>
   );
 }
 
-export default Header;
+export default Headers;

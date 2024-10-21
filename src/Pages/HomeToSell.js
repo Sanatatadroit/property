@@ -54,7 +54,7 @@ function StudentAccomodation() {
           <div className=" lg:w-1/4">
             <img
               src="./search.png" // Replace with your image source
-              alt="Description of the image"
+              alt="Description of the"
               className="shadow-lg w-[400px] h-48"
             />
           </div>
@@ -77,7 +77,7 @@ function StudentAccomodation() {
           <div className=" lg:w-1/4">
             <img
               src="./search.png" // Replace with your image source
-              alt="Description of the image"
+              alt="Description of the "
               className="shadow-lg w-[400px] h-48"
             />
           </div>

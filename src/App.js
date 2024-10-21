@@ -12,10 +12,21 @@ import Overseas from './Pages/Overseas';
 import Parking from './Pages/Parking';
 import Commercial from './Pages/Commercial';
 import StudentAccomendation from './Pages/StudentAccomendation';
-// import SignIn from './Pages/Signup';
+import SignIn from './Pages/Signup';
 import HowToSell from './Pages/HomeToSell';
+import PlaceAdForSale from './Sign-up/PlaceAdForSale';
+import PlaceAdForm from './Sign-up/PlaceAdForm';
+import HomeWorth from './Pages/HomeWorth';
+import ExpertHomeValution from './Pages/ExpertHomeValution';
+import AllProperty from './Pages/AllProperty';
+import ResidentialRent from './Sign-up/ResidentialRent';
+import SharingRoom from './Sign-up/SharingRoom';
+import AccountSetting from './Pages/AccountSetting';
+import PropertyDetail from './Pages/PropertyDetail';
 
 function App() {
+  const apiUrl = process.env.REACT_APP_API_URL;
+  console.log(apiUrl);
   return (
     <Router>
       <div className="App flex flex-col min-h-screen">
@@ -23,9 +34,9 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/" element={<SignIn />} /> */}
+            <Route path="/SignIn" element={<SignIn />} />
 
-            <Route path="/ToRent" element={<ForRent />} />
+            <Route path="/buy" element={<ForRent />} />
             <Route path="/ForSale" element={<ForSale />} />
             <Route path="/Sharing" element={<Sharing />} />
             <Route path="/NewHomes" element={<NewHomes />} />
@@ -35,7 +46,15 @@ function App() {
             <Route path="/Commercial" element={<Commercial />} />
             <Route path="/StudentAccomendation" element={<StudentAccomendation />} />
             <Route path="/HomeToSell" element={< HowToSell/>} />
-
+            <Route path="/PlaceAdForSale" element={< PlaceAdForSale/>} />
+            <Route path="/residential-sale" element={< PlaceAdForm/>} />
+            <Route path="/HomeWorth" element={< HomeWorth/>} />
+            <Route path="/ExpertHomeValution" element={< ExpertHomeValution/>} />
+            <Route path="/AllProperty" element={< AllProperty/>} />
+            <Route path="/residential-rent" element={< ResidentialRent/>} />
+            <Route path="/sharing-rent" element={< SharingRoom/>} />
+            <Route path="/PlaceAdForSale/AccountSetting" element={< AccountSetting/>} />
+            <Route path="/property/:id" element={<PropertyDetail />} />
            
           </Routes>
         </main>

@@ -28,7 +28,7 @@ function Home() {
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
   <h1 className="text-5xl font-bold mb-4">Find your way home</h1>
   <div className="w-full max-w-4xl mx-auto"> {/* Adjusted max-width and added mx-auto */}
-    <div className="w-full border-2 rounded-lg bg-white"> {/* Set width to 100% so it respects the parent container */}
+    {/* <div className="w-full border-2 rounded-lg bg-white"> 
       <ul className="flex justify-center space-x-4 bg-opacity-50  rounded-md text-black p-8 text-xl font-medium">
         <li className="cursor-pointer px-4 py-2 hover:text-blue-500 hover:underline  rounded">Buy</li>
         <li className="cursor-pointer px-4 py-2 hover:text-blue-500 hover:underline rounded">Rent</li>
@@ -56,27 +56,27 @@ function Home() {
           />
         </div>
         <div className="mt-5">
-      {/* Input Field with Icons */}
+      
       <div className="relative flex items-center bg-white rounded-md border border-gray-300">
-        {/* Left Icon */}
+      
         <PiClockCounterClockwise className="w-6 h-6 ml-2 text-gray-500" />
 
-        {/* Input Field */}
+        
         <input
           type="text"
           placeholder="Last search: Ireland "
           className="flex-1 p-4 pl-14 pr-10 py-5 border-none outline-none text-black font-semibold"
         />
 
-        {/* Right Icon */}
+        
         <IoIosArrowForward className="absolute right-3 w-6 h-6 text-gray-500" />
       </div>
 
-      {/* Helper Text Below Input */}
+      
       
     </div>
       </div>
-    </div>
+    </div> */}
     {/* SEO Content Inside Hero */}
     <div className="mt-8 text-white">
       <h2 className="text-xl font-semibold mb-4">
@@ -93,8 +93,8 @@ function Home() {
       </div>
     </div>
     <Browser />
-    <PropertyTools />
-    <PopularAreas />
+    {/* <PropertyTools /> */}
+    {/* <PopularAreas /> */}
     </div>
   );
 }
